@@ -71,7 +71,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(177, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Default scanner (0 default)";
+            this.label3.Text = "Default scanner (1 default)";
             // 
             // save_TextBox
             // 
@@ -93,9 +93,19 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(12, 150);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(309, 22);
             this.numericUpDown1.TabIndex = 8;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // runInBackground_radioButton
             // 

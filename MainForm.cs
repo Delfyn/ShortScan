@@ -105,13 +105,13 @@ namespace WIATest
                 lbDevices.Items.Add(device);
             }
 
-            if (lbDevices.Items.Count == 0 && Properties.Settings.Default.Debug)
+            if (lbDevices.Items.Count == 0)
             {
                 MessageBox.Show("You do not have any WIA devices.");
             }
             else
             {
-                lbDevices.SelectedIndex = -1;
+                lbDevices.SelectedIndex = Properties.Settings.Default.SelectScanner;
             }
         }
 
