@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WIATest
 {
@@ -36,7 +37,28 @@ namespace WIATest
 
         private void saveSettings_button_Click(object sender, EventArgs e)
         {
-
+            if (runInBackground_radioButton.Checked)
+            {
+                try
+                {
+                    //TODO
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error - background");
+                }
+            }
+            if (loadAfterBoot_radioButton.Checked)
+            {
+                try
+                {
+                    File.Copy(Path.GetDirectoryName(Application.ExecutablePath), @"C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" + Path.GetFileName(Path.GetDirectoryName(Application.ExecutablePath)));
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Run as admin (UAC) ... " + Environment.NewLine + Environment.NewLine + ex.ToString(), "Error - Run after boot.");
+                }
+            }
 
             Properties.Settings.Default.SavePath = save_TextBox.Text;
             Properties.Settings.Default.SelectScanner = Convert.ToInt32(numericUpDown1.Value);
@@ -47,6 +69,7 @@ namespace WIATest
             Properties.Settings.Default.FileExtension = saveFileDialog1.FilterIndex;
             Properties.Settings.Default.Save();
             this.Close();
+          //  System.Diagnostics.Process.Start(Application.ExecutablePath);
         }
         void SettingsForm_SettingsSaving(object sender, CancelEventArgs e)
         {

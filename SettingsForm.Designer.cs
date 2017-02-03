@@ -41,6 +41,7 @@
             this.firstKey_combox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.secondKey_textbox = new System.Windows.Forms.TextBox();
+            this.debug_radioButton = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,6 +156,16 @@
             this.secondKey_textbox.Size = new System.Drawing.Size(112, 22);
             this.secondKey_textbox.TabIndex = 15;
             // 
+            // debug_radioButton
+            // 
+            this.debug_radioButton.AutoSize = true;
+            this.debug_radioButton.Location = new System.Drawing.Point(223, 188);
+            this.debug_radioButton.Name = "debug_radioButton";
+            this.debug_radioButton.Size = new System.Drawing.Size(72, 21);
+            this.debug_radioButton.TabIndex = 16;
+            this.debug_radioButton.Text = "Debug";
+            this.debug_radioButton.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,6 +173,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(333, 378);
             this.ControlBox = false;
+            this.Controls.Add(this.debug_radioButton);
             this.Controls.Add(this.secondKey_textbox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.firstKey_combox);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.ComboBox firstKey_combox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox secondKey_textbox;
+        private System.Windows.Forms.CheckBox debug_radioButton;
     }
 }

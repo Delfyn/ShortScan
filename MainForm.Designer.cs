@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnScan = new System.Windows.Forms.Button();
             this.lbDevices = new System.Windows.Forms.ListBox();
             this.settings_button = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // btnScan
@@ -67,7 +69,14 @@
             this.settings_button.TabIndex = 4;
             this.settings_button.Text = "Settings";
             this.settings_button.UseVisualStyleBackColor = true;
-            this.settings_button.Click += new System.EventHandler(this.settings_button_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipTitle = "Scanner";
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // MainForm
             // 
@@ -78,7 +87,7 @@
             this.Controls.Add(this.lbDevices);
             this.Controls.Add(this.btnScan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "WIA Scanner Test";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -91,6 +100,7 @@
         private System.Windows.Forms.Button btnScan;
         private System.Windows.Forms.ListBox lbDevices;
         private System.Windows.Forms.Button settings_button;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
